@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://setalkel.amjadshbib.com/api';
 const IMAGE_BASE_URL = 'https://setalkel.amjadshbib.com/public/';
-const TOKEN = '47|aecSoNjqgEfJffdCnBU6vrQqY20sucC6UDco8Tzf4b12407e';
+const TOKEN = '61|ZWYJB42oCUQKbkF3CGJlTnofeq6S4nSM2xiqpYf1deb36ca7';
 
 const api = axios.create({
   baseURL: BASE_URL,
