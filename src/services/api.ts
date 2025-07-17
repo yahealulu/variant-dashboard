@@ -110,6 +110,16 @@ export const apiService = {
     }
   },
 
+  async getVariantById(variantId: number): Promise<Variant & { product_name: { en: string; ar: string } }> {
+    try {
+      const response = await api.get(`/variants/${variantId}`);
+      return response.data.data;
+    } catch (error) {
+      console.error('Error fetching variant by ID:', error);
+      throw error;
+    }
+  },
+
   getImageUrl(imagePath: string): string {
     if (!imagePath || imagePath === 'null') return '';
     return `${IMAGE_BASE_URL}${imagePath}`;

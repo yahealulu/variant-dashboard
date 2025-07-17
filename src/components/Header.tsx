@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Package } from 'lucide-react';
+import { Globe, Package, Search } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onSearchClick?: () => void;
+  showSearch?: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSearchClick, showSearch = true }) => {
   const { language, setLanguage, t } = useLanguage();
 
   return (
@@ -26,6 +31,17 @@ const Header: React.FC = () => {
           </motion.div>
 
           <div className="flex items-center space-x-4">
+            {showSearch && onSearchClick && (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={onSearchClick}
+                className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/30 transition-all duration-300"
+              >
+                <Search className="h-5 w-5" />
+                <span className="font-medium">{t('search')}</span>
+              </motion.button>
+            )}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}

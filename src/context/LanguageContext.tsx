@@ -31,7 +31,15 @@ const translations = {
     outOfStock: 'Out of Stock',
     loading: 'Loading...',
     noProducts: 'No products available',
-    noVariants: 'No variants available'
+    noVariants: 'No variants available',
+    search: 'Search',
+    searchVariants: 'Search Variants',
+    searchVariantsDescription: 'Enter a variant ID to search for specific product variants',
+    searchVariantPlaceholder: 'Enter variant ID...',
+    searching: 'Searching...',
+    searchError: 'Search Error',
+    variantNotFound: 'Variant not found. Please check the ID and try again.',
+    enterVariantId: 'Enter a variant ID to start searching'
   },
   ar: {
     categories: 'الفئات',
@@ -55,7 +63,15 @@ const translations = {
     outOfStock: 'غير متوفر',
     loading: 'جاري التحميل...',
     noProducts: 'لا توجد منتجات متاحة',
-    noVariants: 'لا توجد متغيرات متاحة'
+    noVariants: 'لا توجد متغيرات متاحة',
+    search: 'بحث',
+    searchVariants: 'البحث في المتغيرات',
+    searchVariantsDescription: 'أدخل معرف المتغير للبحث عن متغيرات منتج محددة',
+    searchVariantPlaceholder: 'أدخل معرف المتغير...',
+    searching: 'جاري البحث...',
+    searchError: 'خطأ في البحث',
+    variantNotFound: 'المتغير غير موجود. يرجى التحقق من المعرف والمحاولة مرة أخرى.',
+    enterVariantId: 'أدخل معرف المتغير لبدء البحث'
   }
 };
 

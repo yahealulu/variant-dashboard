@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import ImageUpload from '../components/ImageUpload';
 
 interface UploadProps {
-  variant: Variant;
+  variant: Variant | (Variant & { product_name: { en: string; ar: string } });
   onBack: () => void;
 }
 
@@ -34,6 +34,12 @@ const Upload: React.FC<UploadProps> = ({ variant, onBack }) => {
     }
   };
 
+  const getVariantDisplayName = () => {
+    if ('product_name' in variant) {
+      return variant.product_name[language];
+    }
+    return variant.size;
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-100">
       <div className="container mx-auto px-6 py-12">
@@ -64,7 +70,7 @@ const Upload: React.FC<UploadProps> = ({ variant, onBack }) => {
             {t('uploadImage')}
           </h1>
           <p className="text-xl text-gray-600">
-            {variant.size} - {variant.packaging}
+            {getVariantDisplayName()} - {variant.packaging}
           </p>
         </motion.div>
 
