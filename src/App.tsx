@@ -133,25 +133,3 @@ function App() {
 }
 
 export default App;
-          <Upload
-            variant={selectedVariant}
-            onBack={handleBackToVariants}
-          />
-        ) : null;
-      
-      default:
-        return <Categories onCategorySelect={handleCategorySelect} />;
-    }
-  };
-
-  return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
-        <Header />
-        {renderCurrentView()}
-      </div>
-    </LanguageProvider>
-  );
-}
-
-export default App;
